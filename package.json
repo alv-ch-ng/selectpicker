@@ -1,0 +1,57 @@
+{
+  "name": "alv-ch-ng.core",
+  "version": "0.2.0",
+  "description": "ALV-CH AngularJS Components",
+  "author": "ALV-CH",
+  "license": "MIT",
+  "engines": {
+    "node": ">= 0.10.0",
+    "npm": ">= 1.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/alv-ch-ng/core.git"
+  },
+  "scripts": {
+    "test": "grunt travis --verbose"
+  },
+  "dependencies": {
+    "grunt-cli": "^0.1.13",
+    "grunt-angular-templates": "^0.5.6",
+    "grunt-contrib-clean": "*",
+    "grunt-contrib-compress": "*",
+    "grunt-contrib-concat": "*",
+    "grunt-contrib-connect": "*",
+    "grunt-contrib-copy": "*",
+    "grunt-contrib-cssmin": "*",
+    "grunt-contrib-jasmine": "*",
+    "grunt-contrib-jshint": "*",
+    "grunt-contrib-less": "*",
+    "grunt-contrib-uglify": "*",
+    "grunt-contrib-watch": "*",
+    "grunt-lesslint":"*",
+    "grunt-cssbeautifier":"*",
+    "grunt-browser-sync": "*",
+    "grunt-coveralls": "*",
+    "grunt-exec": "*",
+    "grunt-express-server": "*",
+    "grunt-karma": "*",
+    "grunt-push-release": "*",
+    "grunt-htmlhint":"*",
+    "grunt-template-jasmine-istanbul": "*"
+  },
+  "devDependencies": {
+    "load-grunt-tasks": "*",
+    "time-grunt": "*",
+    "bower": "*",
+    "chromedriver": "*",
+    "colors": "*",
+    "express": "^4.9.0",
+    "karma": "*",
+    "phantomjs": "*",
+    "selenium": "*",
+    "travis": "*",
+    "browser-sync": "^1.8.3",
+    "codeclimate-test-reporter":"*"
+  }
+}

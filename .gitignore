@@ -1,0 +1,11 @@
+lib/**/*
+node_modules/**/*
+build/**/*
+.idea/**/*
+.idea/*
+demo/fonts/*
+demo/**/*
+demo/*
+private/*
+private/**/*
+private

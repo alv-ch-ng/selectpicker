@@ -1,0 +1,65 @@
+{
+  "name": "alv-ch-ng.core",
+  "version": "0.2.0",
+  "ignore": [
+    ".idea",
+    "demo",
+    "dev",
+    "lib",
+    "node_modules",
+    "src",
+    "test",
+    ".bowerrc",
+    ".gitignore",
+    ".jshintignore",
+    ".jshintrc",
+    "alv-ch-ng.iml",
+    "bower.json",
+    "Gruntfile.js",
+    "package.json",
+    "README.md",
+    "**/.*",
+    "bower_components",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-translate": "2.6.0",
+    "bootstrap": "v3.3.1",
+    "bootstrap-select": "v1.6.3",
+    "bootstrapaccessibilityplugin": "v1.0.4",
+    "jquery": "2.1.1",
+    "angular-tour": "0.1.1",
+    "angular-scroll": "0.6.4",
+    "underscore": "~1.4.4",
+    "angular-ui-bootstrap": "0.12.0",
+    "mailcheck": "1.1.0",
+    "bootstrap-datepicker": "1.3.1",
+    "ng-lodash":"latest"
+  },
+  "devDependencies": {
+    "alv-ch-ng.demo": "latest",
+    "angular": "latest",
+    "angular-route": "latest",
+    "angular-mocks": "latest",
+    "angular-translate-storage-local": "latest",
+    "angular-translate-storage-cookie": "latest",
+    "angular-translate-loader-static-files": "latest",
+    "jasmine": "2.1.3",
+    "jasmine-jquery": "2.0.5",
+    "ng-dev": "0.0.1",
+    "less": "1.7.0"
+  },
+  "resolutions": {
+    "jquery": "~2.1.1",
+    "angular": "~1.3.0"
+  },
+  "homepage": "https://github.com/alv-ch-ng/core",
+  "authors": [
+    "Thomas D'Ascoli <thomas@dasco.li>"
+  ],
+  "description": "ALV-CH AngularJS Components",
+  "moduleType": [
+    "node"
+  ],
+  "license": "MIT"
+}
