@@ -11,5 +11,8 @@
   "display-property-grouping": false,
   "known-properties": false,
   "font-faces": false,
-  "outline-none": false
+  "font-sizes": false,
+  "outline-none": false,
+  "floats": false,
+  "overqualified-elements":false
 }

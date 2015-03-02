@@ -1,7 +1,7 @@
 {
-  "name": "alv-ch-ng.core",
+  "name": "alv-ch-ng.selectpicker",
   "version": "0.2.0",
-  "description": "ALV-CH AngularJS Components",
+  "description": "ALV-CH AngularJS selectpicker Ccomponents",
   "author": "ALV-CH",
   "license": "MIT",
   "engines": {
@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/alv-ch-ng/core.git"
+    "url": "https://github.com/alv-ch-ng/selectpicker.git"
   },
   "scripts": {
     "test": "grunt travis --verbose"

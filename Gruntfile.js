@@ -11,36 +11,46 @@
         grunt.initConfig({
 
             // Metadata.
-            pkg: grunt.file.readJSON("package.json"),
-            banner: '/* ' +
-                '<%= pkg.title || pkg.name %> - <%= pkg.version %> - ' +
-                '<%= grunt.template.today("yyyy-mm-dd") %> - ' +
-                'Copyright (c) <%= grunt.template.today("yyyy") %> Informatik der Arbeitslosenversicherung; */\n',
-
-            // Task configurations.
+            pkg: grunt.file.readJSON('package.json'),
+            alvchng: grunt.file.readJSON('.alvchngrc'),
+             // Task configurations.
             clean: {
                 all: ['dist', 'build'],
                 dist: ['dist'],
                 build: ['build']
             },
-            concat: {
-                options: {
-                    separator: ';',
-                    banner: '<%= banner %>'
-                },
-                forms: {
-                    src: ['src/ng/alv-ch-ng.ui-forms.js', 'src/ng/alv-ch-ng.ui-forms.templates.js','lib/ng-lodash/build/ng-lodash.js','lib/bootstrap-datepicker/js/locales/bootstrap-datepicker.de.js','lib/bootstrap-datepicker/js/locales/bootstrap-datepicker.fr-CH.js','lib/bootstrap-datepicker/js/locales/bootstrap-datepicker.it-CH.js','lib/bootstrap-datepicker/js/locales/bootstrap-datepicker.en-GB.js'],
-                    dest: 'dist/alv-ch-ng.ui-forms.js'
-                }
-            },
             uglify: {
                 options: {
-                    banner: '<%= banner %>'
+                    banner: '<%= alvchng.banner %>'
                 },
                 prod: {
                     files: {
-                        'dist/alv-ch-ng.ui-forms.min.js': ['dist/alv-ch-ng.ui-forms.js']
+                        'dist/alv-ch-ng.selectpicker.min.js': ['dist/alv-ch-ng.selectpicker.js']
                     }
+                },
+                example: {
+                  options: {
+                    'mangle': false
+                  },
+                  files: {
+                    'src/example/lib.min.js': [
+                      'lib/jquery/dist/jquery.js',
+                      'lib/bootstrap/dist/js/bootstrap.js',
+                      'lib/angular/angular.js',
+                      'lib/angular-aria/angular-aria.js',
+                      'lib/angular-cookies/angular-cookies.js',
+                      'lib/angular-route/angular-route.js',
+                      'lib/angular-sanitize/angular-sanitize.js',
+                      'lib/angular-resource/angular-resource.js',
+                      'lib/angular-scroll/angular-scroll.js',
+                      'lib/angular-translate/angular-translate.js',
+                      'lib/angular-translate-storage-cookie/angular-translate-storage-cookie.js',
+                      'lib/angular-translate-storage-local/angular-translate-storage-local.js',
+                      'lib/angular-translate-loader-static-files/angular-translate-loader-static-files.js',
+                      'lib/ng-lodash/build/ng-lodash.js',
+                      'lib/alv-ch-ng.core/dist/alv-ch-ng.core.js'
+                    ]
+                  }
                 }
             },
             less: {
@@ -54,11 +64,52 @@
                     files: {
                         'dist/css/selectpicker.css': ['src/less/selectpicker.less']
                     }
+                },
+                example: {
+                    options: {
+                        paths: ['src/less'],
+                        compress: false,
+                        cleancss: true,
+                        ieCompat: true
+                    },
+                    files: {
+                        'src/example/styles/selectpicker.css': ['src/less/selectpicker.less']
+                    }
                 }
+            },
+            copy: {
+              example: {
+                files: [
+                  {
+                    expand: true,
+                    cwd: 'lib/bootstrap/',
+                    src: 'fonts/*',
+                    dest: 'src/example'
+                  },
+                  {
+                    expand: true,
+                    cwd: 'lib/alv-ch-ng.style/dist/css/',
+                    src: 'alv-ch-ng.bootstrap.css',
+                    dest: 'src/example/styles'
+                  },
+                  {
+                    expand: true,
+                    cwd: 'private/fonts/',
+                    src: '**/*',
+                    dest: 'src/example/fonts'
+                  },
+                  {
+                    expand: true,
+                    cwd: 'lib/alv-ch-ng.style/dist/css/',
+                    src: '*.css',
+                    dest: 'src/example/styles'
+                  }
+                ]
+              }
             },
             cssbeautifier: {
                 options: {
-                    banner: '<%= banner %>'
+                    banner: '<%= alvchng.banner %>'
                 },
                 prod: {
                     files: {
@@ -68,7 +119,7 @@
             },
             cssmin: {
                 options: {
-                    banner: '<%= banner %>'
+                    banner: '<%= alvchng.banner %>'
                 },
                 prod: {
                     files: {
@@ -82,15 +133,24 @@
                         mode: 'gzip'
                     },
                     files: [
-                        { src: ['dist/alv-ch-ng.ui-forms.min.js'], dest: 'dist/alv-ch-ng.ui-forms.min.js' },
                         { src: ['dist/css/selectpicker.min.css'], dest: 'dist/css/selectpicker.min.css' }
                     ]
                 }
             },
+            concat: {
+              options: {
+                separator: ';',
+                banner: '<%= alvchng.banner %>'
+              },
+              prod: {
+                src: 'src/js/selectpicker.js',
+                dest: 'dist/alv-ch-ng.selectpicker.js'
+              }
+            },
             jasmine: {
                 unit: {
                     src: [
-                        'src/ng/*.js'
+                        'src/js/*.js'
                     ],
                     options: {
                         specs: ['test/unit/**/*.unit.spec.js'],
@@ -98,13 +158,21 @@
                         vendor: [
                             'lib/jquery/dist/jquery.js',
                             'lib/jasmine-jquery/lib/jasmine-jquery.js',
+                            'lib/bootstrap/dist/js/bootstrap.js',
                             'lib/angular/angular.js',
                             'lib/angular-mocks/angular-mocks.js',
+                            'lib/angular-aria/angular-aria.js',
+                            'lib/angular-cookies/angular-cookies.js',
+                            'lib/angular-route/angular-route.js',
+                            'lib/angular-sanitize/angular-sanitize.js',
+                            'lib/angular-resource/angular-resource.js',
+                            'lib/angular-scroll/angular-scroll.js',
                             'lib/angular-translate/angular-translate.js',
                             'lib/angular-translate-storage-cookie/angular-translate-storage-cookie.js',
                             'lib/angular-translate-storage-local/angular-translate-storage-local.js',
                             'lib/angular-translate-loader-static-files/angular-translate-loader-static-files.js',
                             'lib/ng-lodash/build/ng-lodash.js',
+                            'lib/alv-ch-ng.core/dist/alv-ch-ng.core.js',
                             'node_modules/grunt-contrib-jasmine/vendor/jasmine-2.0.0/jasmine.js'
                         ],
                         version: '2.0.0',
@@ -158,6 +226,14 @@
                     gitDescribeOptions: '--tags --always --abbrev=1 --dirty=-d' // options to use with '$ git describe'
                 }
             },
+            htmlhint: {
+              options: {
+                htmlhintrc: '.htmlhintrc'
+              },
+                templates: {
+                src: ['src/template/**/*.html']
+              }
+            },
             jshint: {
                 gruntfile: {
                     options: {
@@ -169,7 +245,7 @@
                     options: {
                         jshintrc: '.jshintrc'
                     },
-                    src: ['src/**/*.js']
+                    src: ['src/js/**/*.js']
                 },
                 test: {
                     options: {
@@ -186,6 +262,38 @@
                     imports: ['src/less/**/*.less']
                 },
                 src: ['src/less/selectpicker.less']
+            },
+            watch: {
+              less: {
+                files: 'src/less/**/*.less',
+                  tasks: ['lesslint']
+              },
+              less2css: {
+                files: 'src/less/**/*.less',
+                tasks: ['less:example']
+              },
+              jshint: {
+                files: 'src/js/*.js',
+                  tasks: ['jshint-test']
+              },
+              test: {
+                  files: 'src/js/**/*.js',
+                  tasks: ['unit-test']
+              }
+            },
+            browserSync: {
+              dev: {
+                bsFiles: {
+                  src : 'src/**/*'
+                },
+                options: {
+                  server: {
+                    baseDir: './src',
+                    directory: false
+                  },
+                  watchTask: true
+                }
+              }
             }
         });
 
@@ -193,13 +301,16 @@
         grunt.registerTask('unit-test', ['jasmine']);
         grunt.registerTask('jshint-test', ['jshint']);
         grunt.registerTask('lesslint-test', ['lesslint']);
-
-        grunt.registerTask('all-test', ['lesslint-test', 'htmlhint:templates', 'jshint-test', 'unit-test']);
+        grunt.registerTask('all-test', ['lesslint-test', 'jshint-test', 'unit-test']);
         // CI
         grunt.registerTask('travis', ['jshint', 'clean:build', 'unit-test', 'coveralls']);
 
+        // DEV
+        grunt.registerTask('build', ['less:example','all-test','copy:example','uglify:example']);
+        grunt.registerTask('dev', ['build', 'browserSync:dev', 'watch']);
+
         // Default task.
-        grunt.registerTask('default', ['clean:all','all-test','less:prod','cssbeautifier','cssmin','concat','uglify:prod']);
+        grunt.registerTask('default', ['clean:all','all-test','less:prod','cssbeautifier','cssmin', 'concat','uglify:prod']);
     };
 
 
