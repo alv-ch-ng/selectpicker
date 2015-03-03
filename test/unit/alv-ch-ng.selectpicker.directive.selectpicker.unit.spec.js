@@ -54,7 +54,7 @@
                 });
             }
         );
-        /*
+
         it('renders the element with no options param.',
             function() {
                 inject(function ($compile) {
@@ -69,26 +69,16 @@
                 });
             }
         );
-
-        it('renders the select element as required and uses default scope functions.', function () {
-            // select aland
-            scope.select(scope.countries[1]);
-            scope.$digest();
-
-            expect(elem.find('button.dropdown-toggle').children('span.filter-option')).toContainText(scope.countries[1].text);
-            expect(elem.find('ul.dropdown-menu').children('li.selected').children('a').children('span.text')).toContainText(scope.countries[1].text);
-            expect(scope.testSelect).toBe(scope.countries[1]);
-        });
-
+        /*
         it('renders the select element with options-value param as required and uses default scope functions.',
             function() {
                 inject(function ($compile) {
-                    elem = angular.element('<div><selectpicker options="countries" options-value="\'code\'" ng-model="testSelect"></selectpicker></div>');
+                    elem = angular.element('<div><selectpicker options="countries" value-attribute="\'code\'" ng-model="testSelect"></selectpicker></div>');
                     $compile(elem)(scope);
                     scope.$digest();
 
                     // select aland
-                    scope.select(scope.countries[1].code);
+                    scope.select(scope.countries[1]);
                     scope.$digest();
 
                     expect(elem.find('button.dropdown-toggle').children('span.filter-option')).toContainText(scope.countries[1].code);
