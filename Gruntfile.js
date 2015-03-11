@@ -48,7 +48,9 @@
                       'lib/angular-translate-storage-local/angular-translate-storage-local.js',
                       'lib/angular-translate-loader-static-files/angular-translate-loader-static-files.js',
                       'lib/ng-lodash/build/ng-lodash.js',
-                      'lib/alv-ch-ng.core/dist/alv-ch-ng.core.js'
+                      'lib/alv-ch-ng.core/dist/alv-ch-ng.core.js',
+                      'lib/ng-dev/dist/ng-dev.js',
+                      'lib/highlightjs/highlight.pack.js'
                     ]
                   }
                 }
@@ -100,6 +102,12 @@
                     expand: true,
                     cwd: 'lib/alv-ch-ng.style/dist/css/',
                     src: 'alv-ch-ng.bootstrap.css',
+                    dest: 'src/example/styles'
+                  },
+                  {
+                    expand: true,
+                    cwd: 'lib/ng-dev/dist/css/',
+                    src: '*.min.css',
                     dest: 'src/example/styles'
                   },
                   {

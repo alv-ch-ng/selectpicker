@@ -37,7 +37,8 @@
     "angular-translate-loader-static-files": "latest",
     "jasmine": "2.1.3",
     "jasmine-jquery": "2.0.5",
-    "less": "1.7.0"
+    "less": "1.7.0",
+    "ng-dev":"latest"
   },
   "resolutions": {
     "jquery": "~2.1.1",

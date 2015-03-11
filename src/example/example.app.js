@@ -13,7 +13,8 @@
     'ngAria',
     'pascalprecht.translate',
     'alv-ch-ng.core',
-    'alv-ch-ng.selectpicker'
+    'alv-ch-ng.selectpicker',
+    'ng-dev'
   ];
 
   /**
