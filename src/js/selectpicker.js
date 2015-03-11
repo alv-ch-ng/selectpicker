@@ -121,6 +121,7 @@
                 var noSelection='common_i18n_select_noSelectionText';
                 var required = 'required' in attrs || false;
                 var multiple = 'multiple' in attrs || false;
+                var showTick = 'showTick' in attrs || false;
 
                 function getItemLabelProvider() {
                     if (angular.isFunction(scope.labelProvider)) {
@@ -211,6 +212,9 @@
                                                     '&nbsp;<span class="caret"></span>'+
                                                     '</button>'+
                                                    '</div>');
+                if (multiple || showTick){
+                    selectpicker.addClass('show-tick');
+                }
                 var selectList=angular.element('<ul class="dropdown-menu" role="menu" aria-labelledby="'+id+'"></ul>');
                 if (!required){
                     selectList.append(angular.element('<li role="presentation"><a tabindex="-1" role="menuitem" ng-click="'+attrs.ngModel+'=null"><span class="text no-selection" translate="'+noSelection+'"></span></a></li>'));
@@ -218,6 +222,7 @@
                 selectList.append(angular.element('<li role="presentation" ng-class="{\'selected\': isSelected(option)}" ng-repeat="option in options">' +
                                                     '<a ng-click="select(option)" tabindex="{{$index}}" role="menuitem">' +
                                                         '<span class="text" ng-bind="itemLabelProvider(option)"></span>' +
+                                                        '<span class="glyphicon glyphicon-ok check-mark"></span>'+
                                                     '</a>' +
                                                   '</li>'));
                 selectpicker.append(selectList);

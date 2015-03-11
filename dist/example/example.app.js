@@ -84,6 +84,7 @@
   app.controller('ExampleCtrl', function ($scope) {
 
     $scope.testSelect=[];
+    $scope.testMultipleSelect=[];
 
     $scope.sizes=[
       {group:"Herren", size:[

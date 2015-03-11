@@ -44,13 +44,14 @@
         it('renders the element with additional params (title, required, options-text).',
             function() {
                 inject(function ($compile) {
-                    elem = angular.element('<div><selectpicker title="testTitle" required options="countries" label-attribute="\'code\'" ng-model="testSelect"></selectpicker></div>');
+                    elem = angular.element('<div><selectpicker title="testTitle" show-tick="true" required options="countries" label-attribute="\'code\'" ng-model="testSelect"></selectpicker></div>');
                     $compile(elem)(scope);
                     scope.$digest();
 
                     expect(elem.find('button.dropdown-toggle').children('span.filter-option')).toContainText('EN test title');
                     expect(elem.find('ul.dropdown-menu').children('li').children('a[tabindex=-1]')).not.toBeInDOM();
                     expect(elem.find('ul.dropdown-menu').children('li').children('a[tabindex=0]').children('span.text')).toContainText(scope.countries[0].code);
+                    expect(elem.find('ul.dropdown-menu').children('li').children('a').children('span.glyphicon-ok')).toBeTruthy();
                 });
             }
         );

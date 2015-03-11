@@ -268,6 +268,10 @@
     display: block;
 }
 
+.check-mark {
+    color: green;
+}
+
 .bs-searchbox,
 .bs-actionsbox {
     padding: 4px 8px;

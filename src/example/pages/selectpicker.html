@@ -1,5 +1,25 @@
-<h1>alv-ch-ng.selectpicker - Example App</h1>
+<div class="page-header">
+    <h1>Selectpicker
+        <small>...better selectpicker</small>
+    </h1>
+</div>
 
-<selectpicker id="testdropdown" multiple options="countries" label-attribute="'text'" ng-model="testSelect"></selectpicker>
-
-<div><selectpicker ng-model="testSelect"></selectpicker></div>
+<div scroll-spy>
+    <div class="sidebar collapse navbar-collapse">
+        <div id="toc-container" scroll-fix="alv-divider" scroll-fix-bottom="footer-container" role="navigation">
+            <toc id="toc" selector=".toc"></toc>
+        </div>
+    </div>
+    <div class="content">
+        <h2 class="toc">Basic example</h2>
+        <div highlight="true">
+<selectpicker id="testdropdown" options="countries" label-attribute="'text'" ng-model="testSelect"></selectpicker>
+        </div>
+        <h2 class="toc">Multiselect</h2>
+        <div highlight="true">
+<selectpicker id="multiple" multiple options="countries" label-attribute="'text'" ng-model="testMultipleSelect"></selectpicker>
+        </div>
+        <h2 class="toc">Grouping</h2>
+        <p class="info-notice">under construction</p>
+    </div>
+</div>
