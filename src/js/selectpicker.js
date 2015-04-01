@@ -113,6 +113,7 @@
                 'labelAttribute': '=',
                 'labelProvider': '=',
                 'valueAttribute': '=',
+                'i18nLabel': '=',
                 'ngModel': '='
             },
             link: function(scope, element, attrs, ngModelCtrl) {
@@ -221,7 +222,8 @@
                 }
                 selectList.append(angular.element('<li role="presentation" ng-class="{\'selected\': isSelected(option)}" ng-repeat="option in options">' +
                                                     '<a ng-click="select(option)" tabindex="{{$index}}" role="menuitem">' +
-                                                        '<span class="text" ng-bind="itemLabelProvider(option)"></span>' +
+                                                        '<span class="text" ng-hide="i18nLabel" ng-bind="itemLabelProvider(option)"></span>' +
+                                                        '<span class="text" ng-show="i18nLabel" translate="{{itemLabelProvider(option)}}"></span>' +
                                                         '<span class="glyphicon glyphicon-ok check-mark"></span>'+
                                                     '</a>' +
                                                   '</li>'));

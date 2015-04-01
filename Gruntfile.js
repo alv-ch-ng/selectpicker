@@ -128,6 +128,7 @@
             cssbeautifier: {
                 options: {
                     banner: '<%= alvchng.banner %>'
+
                 },
                 prod: {
                     files: {

@@ -12,11 +12,15 @@
     </div>
     <div class="content">
         <h2 class="toc">Basic example</h2>
-        <div highlight="true">
+        <div highlight="this">
 <selectpicker id="testdropdown" options="countries" label-attribute="'text'" ng-model="testSelect"></selectpicker>
         </div>
+        <h3>List with i18n Translation</h3>
+        <div highlight="this">
+            <selectpicker id="testdropdown2" options="iscoCategory" label-attribute="'text'" i18n-label="true" ng-model="testSelect"></selectpicker>
+        </div>
         <h2 class="toc">Multiselect</h2>
-        <div highlight="true">
+        <div highlight="this">
 <selectpicker id="multiple" multiple options="countries" label-attribute="'text'" ng-model="testMultipleSelect"></selectpicker>
         </div>
         <h2 class="toc">Grouping</h2>

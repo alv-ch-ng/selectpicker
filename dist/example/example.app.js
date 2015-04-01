@@ -13,7 +13,8 @@
     'ngAria',
     'pascalprecht.translate',
     'alv-ch-ng.core',
-    'alv-ch-ng.selectpicker'
+    'alv-ch-ng.selectpicker',
+    'ng-dev'
   ];
 
   /**
@@ -107,7 +108,9 @@
       ]}
     ];
 
-    $scope.countries = [
+      $scope.iscoCategory=[{text:'isco.category1',code:1},{text:'isco.category2',code:2},{text:'isco.category3',code:3},{text:'isco.category4',code:4},{text:'isco.category5',code:5},{text:'isco.category6',code:6},{text:'isco.category7',code:7},{text:'isco.category8',code:8},{text:'isco.category9',code:9}];
+
+      $scope.countries = [
       {text: 'Afghanistan', code: 'AF'},
       {text: 'Aland Islands', code: 'AX'},
       {text: 'Albania', code: 'AL'},

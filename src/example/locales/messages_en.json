@@ -17,5 +17,16 @@
   "common_i18n_language_short_en": "English",
   "common_i18n_contents": "Conntent",
   "common_i18n_scrollToTop": "&uarr; To top",
-  "common_footer_copyright": "<+ alv-ch />"
+  "common_footer_copyright": "<+ alv-ch />",
+  "isco": {
+    "category1": "Managers",
+    "category2": "Professionals",
+    "category3": "Technicians and associate professionals",
+    "category4": "Clerical support workers",
+    "category5": "Service and sales workers",
+    "category6": "Skilled agricultural, forestry and fishery workers",
+    "category7": "Craft and related trades workers",
+    "category8": "Plant and machine operators, and assemblers",
+    "category9": "Elementary occupations"
+  }
 }

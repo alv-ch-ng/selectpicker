@@ -25,5 +25,16 @@
   "common_i18n_language_short_en": "English",
   "common_i18n_contents": "Inhalt",
   "common_i18n_scrollToTop": "&uarr; Nach oben",
-  "common_footer_copyright": "<+ alv-ch />"
+  "common_footer_copyright": "<+ alv-ch />",
+  "isco": {
+    "category1": "Führungskräfte",
+    "category2": "Akademische Berufe",
+    "category3": "Techniker und gleichrangige nichttechnische Berufe",
+    "category4": "Bürokräfte und verwandte Berufe",
+    "category5": "Dienstleistungsberufe und Verkäufer",
+    "category6": "Fachkräfte in der Landwirtschaft und Fischerei",
+    "category7": "Handwerks- und verwandte Berufe",
+    "category8": "Anlagen- und Maschinenbediener und Montageberufe",
+    "category9": "Hilfsarbeitskräfte"
+  }
 }
