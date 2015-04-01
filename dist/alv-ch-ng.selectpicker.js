@@ -210,7 +210,8 @@
                 var selectpicker = angular.element('<div class="btn-group selectpicker form-control">'+
                                                     '<button type="button" class="dropdown-toggle" data-toggle="dropdown" id="'+id+'">'+
                                                     '<span ng-hide="hasSelections()" class="filter-option pull-left" translate="'+noneSelected+'"></span>'+
-                                                    '<span ng-show="hasSelections()" class="filter-option pull-left" ng-bind="buttonLabel"></span>'+
+                                                    '<span ng-show="hasSelections() && !i18nLabel" class="filter-option pull-left" ng-bind="buttonLabel"></span>'+
+                                                    '<span ng-show="hasSelections() && i18nLabel" class="filter-option pull-left" translate="{{buttonLabel}}"></span>'+
                                                     '&nbsp;<span class="caret"></span>'+
                                                     '</button>'+
                                                    '</div>');
