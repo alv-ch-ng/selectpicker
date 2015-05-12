@@ -1,6 +1,6 @@
 {
   "name": "alv-ch-ng.selectpicker",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "ignore": [
     ".idea",
     "lib",

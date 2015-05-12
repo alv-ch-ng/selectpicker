@@ -1,7 +1,7 @@
 {
   "name": "alv-ch-ng.selectpicker",
-  "version": "0.2.1",
-  "description": "ALV-CH AngularJS selectpicker Ccomponents",
+  "version": "0.2.2",
+  "description": "ALV-CH AngularJS selectpicker Components",
   "author": "ALV-CH",
   "license": "MIT",
   "engines": {

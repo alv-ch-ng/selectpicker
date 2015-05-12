@@ -1,4 +1,4 @@
-/* alv-ch-ng.selectpicker - 0.2.1 - 2015-04-01 - Copyright (c) 2015 Informatik der Arbeitslosenversicherung; */
+/* alv-ch-ng.selectpicker - 0.2.2 - 2015-05-12 - Copyright (c) 2015 Informatik der Arbeitslosenversicherung; */
 ;(function () {
     'use strict';
 
@@ -209,10 +209,10 @@
                 scope.buttonLabel = scope.buttonLabelProvider();
                 var selectpicker = angular.element('<div class="btn-group selectpicker form-control">'+
                                                     '<button type="button" class="dropdown-toggle" data-toggle="dropdown" id="'+id+'">'+
-                                                    '<span ng-hide="hasSelections()" class="filter-option pull-left" translate="'+noneSelected+'"></span>'+
-                                                    '<span ng-show="hasSelections() && !i18nLabel" class="filter-option pull-left" ng-bind="buttonLabel"></span>'+
-                                                    '<span ng-show="hasSelections() && i18nLabel" class="filter-option pull-left" translate="{{buttonLabel}}"></span>'+
-                                                    '&nbsp;<span class="caret"></span>'+
+                                                        '<span ng-hide="hasSelections()" class="filter-option pull-left" translate="'+noneSelected+'"></span>'+
+                                                        '<span ng-show="hasSelections() && !i18nLabel" class="filter-option pull-left" ng-bind="buttonLabel"></span>'+
+                                                        '<span ng-show="hasSelections() && i18nLabel" class="filter-option pull-left" translate="{{buttonLabel}}"></span>'+
+                                                        '&nbsp;<span class="caret"></span>'+
                                                     '</button>'+
                                                    '</div>');
                 if (multiple || showTick){
@@ -220,7 +220,7 @@
                 }
                 var selectList=angular.element('<ul class="dropdown-menu" role="menu" aria-labelledby="'+id+'"></ul>');
                 if (!required){
-                    selectList.append(angular.element('<li role="presentation"><a tabindex="-1" role="menuitem" ng-click="'+attrs.ngModel+'=null"><span class="text no-selection" translate="'+noSelection+'"></span></a></li>'));
+                    selectList.append(angular.element('<li role="presentation"><a tabindex="-1" role="menuitem" ng-click="unSelect()"><span class="text no-selection" translate="'+noSelection+'"></span></a></li>'));
                 }
                 selectList.append(angular.element('<li role="presentation" ng-class="{\'selected\': isSelected(option)}" ng-repeat="option in options">' +
                                                     '<a ng-click="select(option)" tabindex="{{$index}}" role="menuitem">' +
@@ -266,6 +266,10 @@
                         return true;
                     }
                     return false;
+                };
+                scope.unSelect=function(){
+                    ngModelCtrl.$setViewValue('');
+                    ngModelCtrl.$commitViewValue();
                 };
                 scope.$watchCollection('ngModel', function() {
                     scope.buttonLabel = scope.buttonLabelProvider();
