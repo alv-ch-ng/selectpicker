@@ -1,4 +1,4 @@
-/* alv-ch-ng.selectpicker - 0.2.2 - 2015-05-12 - Copyright (c) 2015 Informatik der Arbeitslosenversicherung; */
+/* alv-ch-ng.selectpicker - 0.2.3 - 2015-07-23 - Copyright (c) 2015 Informatik der Arbeitslosenversicherung; */
 ;(function () {
     'use strict';
 
@@ -207,7 +207,7 @@
                 scope.itemValueProvider = getItemValueProvider();
                 scope.buttonLabelProvider = buttonLabelProvider;
                 scope.buttonLabel = scope.buttonLabelProvider();
-                var selectpicker = angular.element('<div class="btn-group selectpicker form-control">'+
+                var selectpicker = angular.element('<div class="btn-block btn-plain selectpicker dropdown form-control">'+
                                                     '<button type="button" class="dropdown-toggle" data-toggle="dropdown" id="'+id+'">'+
                                                         '<span ng-hide="hasSelections()" class="filter-option pull-left" translate="'+noneSelected+'"></span>'+
                                                         '<span ng-show="hasSelections() && !i18nLabel" class="filter-option pull-left" ng-bind="buttonLabel"></span>'+

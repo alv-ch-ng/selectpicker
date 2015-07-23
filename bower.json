@@ -1,6 +1,6 @@
 {
   "name": "alv-ch-ng.selectpicker",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "ignore": [
     ".idea",
     "lib",
@@ -19,7 +19,7 @@
   ],
   "dependencies": {
     "angular-translate": "2.6.0",
-    "bootstrap": "v3.3.1",
+    "bootstrap": "v3.3.5",
     "bootstrapaccessibilityplugin": "v1.0.4",
     "jquery": "2.1.1",
     "ng-lodash":"latest"

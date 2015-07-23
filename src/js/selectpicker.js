@@ -206,7 +206,7 @@
                 scope.itemValueProvider = getItemValueProvider();
                 scope.buttonLabelProvider = buttonLabelProvider;
                 scope.buttonLabel = scope.buttonLabelProvider();
-                var selectpicker = angular.element('<div class="btn-group selectpicker form-control">'+
+                var selectpicker = angular.element('<div class="btn-block btn-plain selectpicker dropdown form-control">'+
                                                     '<button type="button" class="dropdown-toggle" data-toggle="dropdown" id="'+id+'">'+
                                                         '<span ng-hide="hasSelections()" class="filter-option pull-left" translate="'+noneSelected+'"></span>'+
                                                         '<span ng-show="hasSelections() && !i18nLabel" class="filter-option pull-left" ng-bind="buttonLabel"></span>'+

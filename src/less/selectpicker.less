@@ -19,6 +19,18 @@
   > .btn {
     width: 100%;
     padding-right: 25px;
+
+    transition: none;
+    -webkit-transform: none;
+    -moz-transform: none;
+    -ms-transform: none;
+    -o-transform: none;
+    transform: none;
+    -webkit-box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+    -moz-box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+    top: 0;
+    margin-bottom: 0;
   }
 
   // Error display
@@ -57,7 +69,7 @@
 }
 
 // The selectpicker components
-.selectpicker.btn-group {
+.selectpicker {
   &:not(.input-group-btn),
   &[class*="col-"] {
     float: none;
@@ -309,32 +321,6 @@
 
 .check-mark {
   color: green;
-}
-
-.bs-searchbox,
-.bs-actionsbox {
-  padding: 4px 8px;
-}
-
-.bs-actionsbox {
-  float: left;
-  width: 100%;
-  box-sizing: border-box;
-
-  & .btn-group button {
-    width: 50%;
-  }
-}
-
-.bs-searchbox {
-  & + .bs-actionsbox {
-    padding: 0 8px 4px;
-  }
-
-  & input.form-control {
-    margin-bottom: 0;
-    width: 100%;
-  }
 }
 
 .mobile-device {
